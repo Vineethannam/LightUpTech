@@ -1,0 +1,126 @@
+:root{
+    --primery-color: #060417;
+    --secound-color:#000;
+    --white-color:#fff;
+    --purpleD-color:#6751b9;
+    --purpleD1-color:#8064e8;
+    --purpleL-color:#a892fe;
+    --text-color:#fff;
+    --grey-color:#505050;
+    /* 8064e8;a892fe; */
+}
+.nav-header{
+    background: var(--white-color);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(50px);
+    padding: 0.5rem 2rem;
+    border-bottom: var(--grey-color) solid 0.3px;
+}
+.nav-content{
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    margin: 0 auto;
+    border-bottom: var(--primary-color) solid 3px;
+}
+.logo{
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+.nav-content ul{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+.nav-content ul li{
+    margin: 0 1.5rem;
+    cursor: pointer;
+}
+.menu-item{
+    position: relative;
+}
+.menu-item::before{
+    content: " ";
+    position: absolute;
+    height: 0.2rem;
+    width: 2rem;
+    background: var(--secound-color);
+    bottom: -0.3rem;
+    border-radius: 0.3rem;
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: all 0.3s ease;
+}
+.menu-item:hover::before{
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-btn{
+    background: var(--secound-color);
+    color: var(--white-color);
+    border: var(--white-color) solid 1px;
+    outline: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contact-btn:hover{
+    background: var(--white-color);
+    color: var(--secound-color);
+    outline: var(--secound-color) solid 2px;
+}
+
+
+
+/* Hamburger menu */
+.menu-btn{
+    background: var(--white-color);
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    color: var(--secound-color);
+    font-size: 1.5rem;
+    line-height: 0;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    display: none;
+}
+.menu-btn:hover{
+    color:  var(--secound-color);
+    background: var(--white-color);
+    outline: 1.5px solid var(--secound-color);
+}
+
+
+/* media Queries */
+
+
+
+@media (max-width:769px){
+    .menu-btn{
+        display: block;
+    }
+    .nav-content ul{
+        display: none;
+    }
+    .logo{
+        font-size: 2rem;
+    }
+}
